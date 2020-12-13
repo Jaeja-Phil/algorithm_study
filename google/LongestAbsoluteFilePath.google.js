@@ -33,3 +33,26 @@ let solution = (input) => {
 let result = solution(
   "dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext"
 );
+
+let solution2 = (input) => {
+  let maxLength = 0;
+  let pathLength = { 0: 0 };
+  let lines = input.split("\n");
+
+  for (let i = 0; i < lines.length; i++) {
+    let name = lines[i].replace(/\t/g, "");
+    let depth = lines[i].length - name.length;
+
+    if (name.includes(".")) {
+      maxLength = Math.max(maxLength, pathLength[depth] + name.length);
+    } else {
+      pathLength[depth + 1] = pathLength[depth] + name.length + 1;
+    }
+  }
+
+  return maxLength;
+};
+
+let result2 = solution2(
+  "dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext"
+);
