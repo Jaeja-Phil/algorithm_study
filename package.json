@@ -1,0 +1,17 @@
+{
+  "name": "algorithm_study",
+  "version": "1.0.0",
+  "description": "for studying algorithm",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "algorithm",
+    "google",
+    "facebook",
+    "jaeja"
+  ],
+  "author": "Phillip (Wonjun)",
+  "license": "ISC"
+}
