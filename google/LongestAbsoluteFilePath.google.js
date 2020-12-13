@@ -21,5 +21,15 @@
  */
 
 let solution = (input) => {
-  return;
+  let stack = [];
+
+  return input.split("\n").reduce((max, p) => {
+    let level = p.lastIndexOf("\t") + 1;
+    stack[level] = p.length - level + (level ? stack[level - 1] : 0);
+    return p.indexOf(".") === -1 ? max : Math.max(max, stack[level] + level);
+  }, 0);
 };
+
+let result = solution(
+  "dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext"
+);
