@@ -56,3 +56,23 @@ let solution2 = (input) => {
 let result2 = solution2(
   "dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext"
 );
+
+let solution3 = (input) => {
+  const stack = [];
+  let max = 0;
+  input = input.split("\n");
+  input;
+  for (let i = 0; i < input.length; i++) {
+    const level = input[i].lastIndexOf("\t") + 1;
+    stack[level] = input[i].length - level;
+    if (input[i].includes(".")) {
+      max = Math.max(max, stack.slice(0, level + 1).reduce((a, c) => a + c, 0) + level);
+    }
+  }
+
+  return max;
+};
+
+let result3 = solution3(
+  "dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext"
+);
