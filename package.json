@@ -13,5 +13,8 @@
     "jaeja"
   ],
   "author": "Phillip (Wonjun)",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "collections": "^5.1.12"
+  }
 }
