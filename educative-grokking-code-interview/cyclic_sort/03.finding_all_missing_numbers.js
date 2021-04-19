@@ -18,8 +18,7 @@ function solution(arr) {
 
   while (currentIdx < n) {
     const currentNum = arr[currentIdx] - 1;
-    // if element at currentIdx does not match
-    // to its (value - 1)'s index
+    // if element at currentIdx does not match to its (value - 1)'s index
     if (arr[currentIdx] !== arr[currentNum]) {
       // swap
       [arr[currentNum], arr[currentIdx]] = [arr[currentIdx], arr[currentNum]];

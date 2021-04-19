@@ -45,12 +45,16 @@ function solution(schedule) {
   if (schedule === null || n === 0) {
     return result;
   }
-  minHeap = new Heap([], null, (a, b) => b.interval.start - a.interval.start);
+  const minHeap = new Heap(
+    [],
+    null,
+    (a, b) => b.interval.start - a.interval.start
+  );
   // insert the first interval of each employee to the queue
   for (i = 0; i < n; i++) {
     minHeap.push(new EmployeeInterval(schedule[i][0], i, 0));
   }
-  previousInterval = minHeap.peek().interval;
+  let previousInterval = minHeap.peek().interval;
   while (minHeap.length > 0) {
     const queueTop = minHeap.pop();
     // if previousInterval is not overlapping with the next interval, insert a free interval
