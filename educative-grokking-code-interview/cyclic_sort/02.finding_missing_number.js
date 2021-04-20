@@ -21,13 +21,11 @@ function solution(arr) {
   // perform cyclic sort (check 01.cyclic_sort.js)
   // range from 0 to n, so changes have been applied accordingly.
   while (currentIdx < n) {
-    const currentNum = arr[currentIdx];
-    currentNum;
-    currentIdx;
-    // currentNum < n because arr[currentNum] can potentially be undefined
+    const curElement = arr[currentIdx];
+    // curElement < n because arr[curElement] can potentially be undefined
     // if it is the biggest number
-    if (currentNum < n && currentIdx !== currentNum) {
-      [arr[currentIdx], arr[currentNum]] = [arr[currentNum], arr[currentIdx]];
+    if (curElement < n && currentIdx !== curElement) {
+      [arr[currentIdx], arr[curElement]] = [arr[curElement], arr[currentIdx]];
     } else {
       currentIdx += 1;
     }

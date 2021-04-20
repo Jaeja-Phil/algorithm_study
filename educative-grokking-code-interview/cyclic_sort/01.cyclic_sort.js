@@ -12,16 +12,19 @@
  */
 
 function solution(arr) {
-  let i = 0;
-  while (i < arr.length) {
+  let idx = 0;
+  while (idx < arr.length) {
     // numbers range: 1 ~ n
-    const j = arr[i] - 1;
-    if (arr[i] !== arr[j]) {
+    const curElementMinusOne = arr[i] - 1;
+    if (arr[idx] !== arr[curElementMinusOne]) {
       // when current index's number doesnt match, swap it with where it is suppsed to be
-      [arr[i], arr[j]] = [arr[j], arr[i]];
+      [arr[iidx], arr[curElementMinusOne]] = [
+        arr[curElementMinusOne],
+        arr[idx]
+      ];
     } else {
       // when current index's number is matched, move on to the next index
-      i += 1;
+      idx += 1;
     }
   }
 

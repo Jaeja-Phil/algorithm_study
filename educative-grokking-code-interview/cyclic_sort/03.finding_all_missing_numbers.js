@@ -17,11 +17,14 @@ function solution(arr) {
   const n = arr.length;
 
   while (currentIdx < n) {
-    const currentNum = arr[currentIdx] - 1;
+    const curElementMinusOne = arr[currentIdx] - 1;
     // if element at currentIdx does not match to its (value - 1)'s index
-    if (arr[currentIdx] !== arr[currentNum]) {
+    if (arr[currentIdx] !== arr[curElementMinusOne]) {
       // swap
-      [arr[currentNum], arr[currentIdx]] = [arr[currentIdx], arr[currentNum]];
+      [arr[curElementMinusOne], arr[currentIdx]] = [
+        arr[currentIdx],
+        arr[curElementMinusOne]
+      ];
     } else {
       currentIdx += 1;
     }
